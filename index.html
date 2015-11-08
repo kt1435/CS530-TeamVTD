@@ -1,0 +1,35 @@
+ <!DOCTYPE html>
+ <html>
+ <head>
+ 	<STYLE TYPE="text/css">
+ 	#map-canvas {
+ 		height: 500px;
+ 	}
+
+ 	</STYLE>
+ 	<title></title>
+ 	<script type="text/javascript" src="http://maps.googleapis.com/maps/api/js?libraries=places&sensor=false"></script>
+
+ 	<!-- jQuery -->
+ 	<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.7/jquery.min.js"></script>
+ 	
+    <SCRIPT TYPE="text/javascript">
+
+    function initialise(location)
+    {
+    	console.log(location);
+    }
+    $(document).ready(function()
+      {
+      	//Call getCurrentPosition with success and failure callbacks
+      	navigator.geolocation.getCurrentPosition(initialise);
+
+        });
+
+    </SCRIPT>
+ </head>
+ <body>
+ 	
+ 	<div id="map-canvas"></div>
+ </body>
+ </html>
