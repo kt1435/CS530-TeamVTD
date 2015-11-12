@@ -1,6 +1,6 @@
 <script >
-   var ctfastrakJson = '{"latitude":"Alex",
-                        "longitude":"Smith",
+   var ctfastrakJson = '{"latitude":"________",
+                        "longitude":"_______",
                         "location":[
                             "Stanley street",
                            
