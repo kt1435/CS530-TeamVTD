@@ -92,73 +92,18 @@
 
     //Stanley Street
     ctfastrak.createMarker(41.6825307, -72.7677759,'Stanley Street');
+
+     var xhr = new XMLHttpRequest();
+            xhr.open("GET", "http://65.213.12.244/realtimefeed/externalfeed/trapezerealtimefeed.json", true);
+            xhr.onload = function () {
+                console.log(xhr.responseText);
+            };
+            xhr.send();
+
     
     }
-/////////////////////////////////////////////
-
-  function showCtfastraksInfo(ctfastraks) {
-
-    //ctfastrakbusCount = ctfastraks.items.length;
-
-    var message = "<h3>" + ctfastraks.header + "</h3>" +
-                          "On " + ctfastraks.timestamp +
-                    " we'll run " + ctfastrakbusCount + " ctfastrak.";
-
-    locationUI.innerHTML = message + locationUI.innerHTML;
-    resizeMapLink.style.visibility = "visible";
-
-    createCtfastrakMap(ctfastraks);
-}
-
-            function loadCtfastrakData(dataUrl) {
-                var xhr = new XMLHttpRequest();
-                xhr.open("GET", dataUrl);
 
 
-                xhr.onreadystatechange = function() {
-
-                    if (xhr.readyState == 4) {
-          if ((xhr.status >= 200 && xhr.status < 300) ||
-                                    xhr.status === 304) {
-        var jsonData = xhr.responseText;
-        
-        var ctfastraksData = JSON.parse(jsonData).ctfastraks;
-
-        showCtfastraksInfo(ctfastraksData);
-
-        } else {
-        console.log(xhr.statusText);
-
-           tempContainer.innerHTML += '<p class="error">Error getting ' +
-                 target.name + ": "+ xhr.statusText +
-                 ",code: "+ xhr.status + "</p>";
-     }
-    }
- }
- xhr.send();
-                
-}
-
-
-var dataUrl = 'http://65.213.12.244/realtimefeed/externalfeed/trapezerealtimefeed.json';
-loadCtfastrakData(dataUrl);
-
-/////////////////////////////////////////
-    ctfastrak.getBusRoutes = function()
-    {
-  $.getJSON('http://65.213.12.244/realtimefeed/tripupdate/tripupdates.json', function(data)
-  {
-    $.each(data.items, function(i,item){
-      trace(item.display_name);
-      //add bus stops to the side panel
-      $('#stoplist').append(item.display_name + '<br>');
-    });
-  });
-}
-
-
-
- 
 </script>
 </head>
 <body onload="ctfastrak.initialize()" "xhr.onload">
