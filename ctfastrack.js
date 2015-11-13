@@ -1,15 +1,4 @@
-<script >
-   var ctfastrakJson = '{"latitude":"________",
-                        "longitude":"_______",
-                        "location":[
-                            "Stanley street",
-                           
-                        ]
-                       }';
+var ctfastrak = {"name":"Stanley Street", "lat":"41.6825307", "lng": "-72.7677759"
 
-   var mapfastrak=JSON.parse(ctfastrakJson);
 
-   console.log("Parsed ctfastrak data: latitude=" + mapfastrak.latitude +
-                      " longitude=" + mapfastrak.longitude +
-                      " bus stop location=" + mapfastrak.location);
-</script>
+};
